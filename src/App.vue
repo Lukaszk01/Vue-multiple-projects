@@ -3,10 +3,12 @@
     <Header />
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>1 of 3</b-col>
+        <b-col sm="6" offset="3">
+          <QuestionBox />
+        </b-col>
       </b-row>
     </b-container>
-    <QuestionBox />
+
   </div>
 
 </template>
@@ -20,9 +22,17 @@ export default {
   components: {
     Header,
     QuestionBox
+  },
+  mounted: function() {
+    fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
+      method: 'get'
+    })
+    .then((response)=> {
+      console.log(response.json())
+    })
   }
-
 }
+
 </script>
 
 <style>
