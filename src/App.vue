@@ -24,12 +24,15 @@ export default {
     QuestionBox
   },
   mounted: function() {
-    fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
+    fetch('', {
       method: 'get'
     })
-    .then((response)=> {
-      console.log(response.json())
-    })
+      .then((response) => {
+        return response.json()
+      })
+      .then((jsonData) => {
+        this.questions = jsonData.results
+      })
   }
 }
 
