@@ -23,17 +23,17 @@ export default {
     Header,
     QuestionBox
   },
-  mounted: function() {
-    fetch('', {
-      method: 'get'
-    })
-      .then((response) => {
-        return response.json()
-      })
-      .then((jsonData) => {
-        this.questions = jsonData.results
-      })
-  }
+  // mounted: function() {
+  //   fetch('', {
+  //     method: 'get'
+  //   })
+  //     .then((response) => {
+  //       return response.json()
+  //     })
+  //     .then((jsonData) => {
+  //       this.questions = jsonData.results
+  //     })
+  // }
 }
 
 </script>
